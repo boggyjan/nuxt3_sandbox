@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev --hostname '0.0.0.0' --port 8000",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "nuxt3": "^3.0.0-27424151.dbab979"
+  },
+  "dependencies": {
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0"
+  }
+}
