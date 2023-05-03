@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export function useMousePosition() {
   const x = ref(0)
@@ -14,11 +14,11 @@ export function useMousePosition() {
   }
 
   onMounted(() => {
-    window.addEventListener("mousemove", update)
+    window.addEventListener('mousemove', update)
   })
 
   onUnmounted(() => {
-    window.removeEventListener("mousemove", update)
+    window.removeEventListener('mousemove', update)
   })
 
   return { x, y, sqr }
