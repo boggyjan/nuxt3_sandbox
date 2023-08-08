@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-let count = ref(0)
-let myArray = ref([1, 2, 3])
+const count = ref(0)
+const myArray = ref([1, 2, 3])
 const myArray2 = reactive([{ a: 1 }, { a: 2 }, { a: 3 }])
 const myArray3 = reactive({ a: [1, 2, 3] })
 

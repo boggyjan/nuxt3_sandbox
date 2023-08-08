@@ -4,13 +4,10 @@
     <p>紀錄一下目前已知的問題：</p>
     <ul>
       <li>沒有loading bar 自刻了一個，但就只是換頁時會顯示而已，沒有跟$fetch連動</li>
-      <li>沒有scrollToTop功能</li>
-      <li>layout功能不如2版好用</li>
       <li>用component標籤去放該頁body才需要的css的style標籤時，在離開頁面的時後不會被清掉</li>
-      <li>dev時TS根本就不會做型別檢查，要用 npx nuxi typecheck 指令才能檢查</li>
+      <li>dev時Eslint不會檢查，要用 npm run lint 指令才能檢查</li>
+      <li>dev時TS不會做型別檢查，要用 npx nuxi typecheck 指令才能檢查，跟Eslint一樣</li>
       <li>換頁時，會先清掉該頁的變數（？），導致會有一瞬間看到原本應該要顯示變數的地方變成空白，然後才導到另一頁</li>
-      <li>常常新增頁面時，會需要重開cli，不然會噴錯</li>
-      <li>有發現再來補</li>
     </ul>
 
     <div class="test-box">

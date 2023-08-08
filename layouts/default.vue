@@ -29,8 +29,6 @@ nuxtApp.hook("page:start", () => {
 
 nuxtApp.hook("page:finish", () => {
   loading.value.finish()
-  // 暫且可以這樣補足目前nuxt3沒有scrollToTop的功能（這個很基本耶...
-  // window.scrollTo(0, 0)
 })
 </script>
 

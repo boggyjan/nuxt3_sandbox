@@ -1,16 +1,15 @@
 <template>
-  <NuxtLayout :name="themeType">
+  <div>
+    <h3>Layout demo</h3>
     <div>
-      <h3>Layout demo</h3>
+      Nuxt3 指定 layout，直接在template裡加個「NuxtLayout」component即可
       <div>
-        更換layout已經不再使用layout: 'dark' 這樣的寫法了，直接在template裡用NuxtLayout comp即可
-        <div>
-          <button @click="themeType = 'light'">Light</button>
-          <button @click="themeType = 'dark'">Dark</button>
-        </div>
+        <NuxtLayout :name="themeType" />
+        <button @click="themeType = 'light'">Light</button>
+        <button @click="themeType = 'dark'">Dark</button>
       </div>
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup>
