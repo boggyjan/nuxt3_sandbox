@@ -1,12 +1,23 @@
 <template>
   <div>
     <NuxtLink to="/member">
-      Member Page
+      Member
+    </NuxtLink>
+    |
+    <NuxtLink to="/story/1">
+      Nested page with auth required
+    </NuxtLink>
+    |
+    <NuxtLink to="/story/1">
+      Nested page with auth required (Story 1)
     </NuxtLink>
     |
     <NuxtLink to="/login">
-      Login Page
+      Login
     </NuxtLink>
+
+    <hr>
+    注意：用來對每個auth或guest的頁面設定middleware的「definePageMeta」method「只能」放在頁面，放在layout或放在component裡都會失效！
 
     <hr>
     isLogin:

@@ -1,7 +1,11 @@
 <template>
   <div>
     <h2>v-memo v-for中可以用v-memo列出條件，當條件結果有變動時更新列表</h2>
-    <div v-for="item in list" :key="item.id" v-memo="[item.id === selected]">
+    <div
+      v-for="item in list"
+      :key="item.id"
+      v-memo="[item.id === selected]"
+    >
       <p>ID: {{ item.id }} - {{ item.name }}- selected: {{ item.id === selected }}</p>
     </div>
     <div>
