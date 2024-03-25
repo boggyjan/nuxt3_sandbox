@@ -12,17 +12,28 @@
 // $fetch 是用ohmyfetch 更詳細說明請見：https://github.com/unjs/ohmyfetch
 // 
 // const data = await $fetch('http://worldtimeapi.org/api/timezone/Asia/Taipei')
-// useFetch, useAsyncData 有何不同？應該就跟nuxt2一樣
+// useFetch, useAsyncData 有何不同？應該就跟nuxt2的fetch與asyncData一樣
 
 async function getMarketData (ref) {
   try {
-    const { data } = await useAsyncData('market',
-      () => $fetch('http://worldtimeapi.org/api/timezone/Asia/Taipei',
-      { parseResponse: JSON.parse }),
-      { pick: ['datetime'] } // pick: ['datetime', 'timezone']
+    // const { data } = await useAsyncData(
+    //   'market',
+    //   () => $fetch('http://worldtimeapi.org/api/timezone/Asia/Taipei',
+    //     { parseResponse: JSON.parse }
+    //   ),
+    //   { pick: ['datetime'] } // pick: ['datetime', 'timezone']
+    // )
+    //
+    // 可以簡化為
+    //
+    const { data } = await useAsyncData(
+      'market',
+      () => $fetch('http://worldtimeapi.org/api/timezone/Asia/Taipei', { pick: ['datetime'] })
     )
 
-    // const data = await useFetch('http://worldtimeapi.org/api/timezone/Asia/Taipei', { parseResponse: JSON.parse, pick:  ['data', 'status'] })
+    console.log(data)
+
+    // const data = await useFetch('http://worldtimeapi.org/api/timezone/Asia/Taipei', { parseResponse: JSON.parse, pick: ['data', 'status'] })
 
     ref.value = data
   } catch {
