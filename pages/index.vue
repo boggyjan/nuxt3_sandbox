@@ -30,10 +30,30 @@
         >
           {{ route.name }}
         </NuxtLink>
+
+        <canvas ref="circle" width="800" height="800" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted () {
+    const canvas = this.$refs.circle
+    const context = canvas.getContext('2d')
+    this.drawCircleToCanvas(context, 398)
+  },
+
+  methods: {
+    drawCircleToCanvas (context, radius) {
+      context.beginPath()
+      context.arc(radius + 1, radius + 1, radius, 0, 2 * Math.PI)
+      context.stroke()
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .test-routes {
@@ -44,6 +64,11 @@
   .route-link {
     display: block;
     width: fit-content;
+  }
+
+  canvas {
+    width: 100%;
+    max-width: 400px;
   }
 }
 </style>
